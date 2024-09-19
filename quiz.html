@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Party Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #555;
+        }
+
+        .question {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            border: 2px solid #333;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        #invitation {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Beantworte diese Fragen!</h1>
+
+        <!-- Frage 1 -->
+        <div class="question" id="question1">
+            <p>Wie heißt die Lehrerin von Disneys große Pause?</p>
+            <button class="btn" onclick="checkAnswer(1, 'Miss Grotke')">Miss Grotke</button>
+            <button class="btn" onclick="checkAnswer(1, 'Shirin David')">Shirin David</button>
+            <button class="btn" onclick="checkAnswer(1, 'Talahun')">Talahun</button>
+            <button class="btn" onclick="checkAnswer(1, 'Mr. Bean')">Mr. Bean</button>
+        </div>
+
+        <!-- Frage 2 -->
+        <div class="question" id="question2" style="display:none;">
+            <p>Was essen Timon und Pumba am liebsten?</p>
+            <button class="btn" onclick="checkAnswer(2, '30')">Schaschlik</button>
+            <button class="btn" onclick="checkAnswer(2, '25')">Kebab</button>
+            <button class="btn" onclick="checkAnswer(2, '35')">Sushi</button>
+            <button class="btn" onclick="checkAnswer(2, '40')">Käfer</button>
+        </div>
+
+        <!-- Frage 3 -->
+        <div class="question" id="question3" style="display:none;">
+            <p>Wie heißt der Nacktmulch bei Kim Possible?</p>
+            <button class="btn" onclick="checkAnswer(3, 'Olaf')">Olaf</button>
+            <button class="btn" onclick="checkAnswer(3, 'Putin')">Putin</button>
+            <button class="btn" onclick="checkAnswer(3, 'Berlin')">Berlin</button>
+            <button class="btn" onclick="checkAnswer(3, 'Rufus')">Rufus</button>
+        </div>
+
+        <!-- Frage 4 -->
+        <div class="question" id="question4" style="display:none;">
+            <p>Eine Frage?</p>
+            <button class="btn" onclick="checkAnswer(4, 'A')">A</button>
+            <button class="btn" onclick="checkAnswer(4, 'B')">B</button>
+            <button class="btn" onclick="checkAnswer(4, 'C')">C</button>
+            <button class="btn" onclick="checkAnswer(4, 'D')">D</button>
+        </div>
+
+        <!-- Frage 5 -->
+        <div class="question" id="question5" style="display:none;">
+            <p>In welcher Jahreszeit habe ich Geburtstag?</p>
+            <button class="btn" onclick="checkAnswer(5, 'Herbst')">Herbst</button>
+            <button class="btn" onclick="checkAnswer(5, 'Frühling')">Frühling</button>
+            <button class="btn" onclick="checkAnswer(5, 'Sommer')">Sommer</button>
+            <button class="btn" onclick="checkAnswer(5, 'Winter')">Winter</button>
+        </div>
+
+        <!-- Einladung -->
+        <div id="invitation">
+            <h2>Herzlichen Glückwunsch!</h2>
+            <p>Hier ist deine Einladung zur White Party!</p>
+            <a href="invite.html" class="btn">Zur Einladung</a>
+        </div>
+    </div>
+
+    <script>
+        // Verfolge, welche Fragen korrekt beantwortet wurden
+        let correctAnswers = 0;
+
+        // Die korrekten Antworten für jede Frage
+        const correctAnswerKey = {
+            1: 'Miss Grotke',
+            2: '40',
+            3: 'Rufus',
+            4: 'C',
+            5: 'Herbst'
+        };
+
+        // Funktion, um die Antwort zu überprüfen
+        function checkAnswer(questionNumber, answer) {
+            if (answer === correctAnswerKey[questionNumber]) {
+                // Zähle richtige Antwort
+                correctAnswers++;
+                alert("Richtig!");
+
+                // Zeige die nächste Frage oder die Einladung an
+                if (questionNumber < 5) {
+                    document.getElementById("question" + questionNumber).style.display = "none";
+                    document.getElementById("question" + (questionNumber + 1)).style.display = "block";
+                } else if (correctAnswers === 5) {
+                    document.getElementById("question5").style.display = "none";
+                    document.getElementById("invitation").style.display = "block";
+                }
+            } else {
+                alert("Falsch! Versuch es noch einmal ;)))");
+            }
+        }
+    </script>
+</body>
+</html>
