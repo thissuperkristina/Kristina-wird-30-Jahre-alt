@@ -12,12 +12,16 @@ body {
 }
 
 .container {
-    text-align: center;
-    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Zentriert den Inhalt */
+    padding: 20px; /* Padding für Mobilgeräte */
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     margin: auto;
     max-width: 800px;
+    overflow: hidden; /* Verhindert Überlauf */
+    min-height: 300px; /* Stellt sicher, dass der Container genügend Höhe hat */
 }
 
 h1 {
@@ -29,7 +33,11 @@ h1 {
 /* Responsive Schriftgröße */
 @media (max-width: 600px) {
     h1 {
-        font-size: 2em; /* Kleinere Schriftgröße für mobile Geräte */
+        font-size: 1.8em; /* Kleinere Schriftgröße für mobile Geräte */
+    }
+
+    .container {
+        padding: 10px; /* Weniger Padding für sehr kleine Bildschirme */
     }
 }
 
