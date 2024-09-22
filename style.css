@@ -1,6 +1,6 @@
 /* styles.css */
 body {
-    background-image: url('media/Neujahr.jpeg');
+    background-image: url('media/depositphotos_37690569-stock-photo-white-and-silver-abstract-bokeh.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -14,31 +14,18 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Zentriert den Inhalt */
-    padding: 20px; /* Padding für Mobilgeräte */
+    align-items: center;
+    text-align: center;
+    padding: 50px;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     margin: auto;
     max-width: 800px;
-    overflow: hidden; /* Verhindert Überlauf */
-    min-height: 300px; /* Stellt sicher, dass der Container genügend Höhe hat */
 }
 
 h1 {
     font-size: 2.5em;
     color: #fff;
-    margin: 0; /* Verhindert zusätzlichen Abstand */
-}
-
-/* Responsive Schriftgröße */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 1.8em; /* Kleinere Schriftgröße für mobile Geräte */
-    }
-
-    .container {
-        padding: 10px; /* Weniger Padding für sehr kleine Bildschirme */
-    }
 }
 
 .countdown {
@@ -62,8 +49,25 @@ h1 {
     color: #fff;
 }
 
+.question {
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
 #invitation {
     display: none;
     margin-top: 20px;
     font-size: 1.3em;
+}
+.music-player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Höhe für den Container */
+}
+
+.music-player iframe {
+    border: none;
+    width: 300px; /* oder eine andere Breite */
+    height: 60px; /* Höhe des Players */
 }
