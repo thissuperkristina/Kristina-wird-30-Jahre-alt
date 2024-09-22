@@ -26,6 +26,7 @@ body {
 h1 {
     font-size: 2.5em;
     color: #fff;
+    margin: 0; /* Entferne Margin für bessere Zentrierung */
 }
 
 .countdown {
@@ -59,15 +60,30 @@ h1 {
     margin-top: 20px;
     font-size: 1.3em;
 }
+
 .music-player {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100px; /* Höhe für den Container */
+    margin: 20px 0; /* Abstand über und unter dem Player */
 }
 
 .music-player iframe {
     border: none;
     width: 300px; /* oder eine andere Breite */
     height: 60px; /* Höhe des Players */
+}
+
+/* Media Queries für responsives Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8em; /* Kleinere Schriftgröße auf Mobilgeräten */
+    }
+    .container {
+        padding: 20px; /* Weniger Padding auf kleinen Bildschirmen */
+    }
+    .music-player iframe {
+        width: 100%; /* Vollbreite auf Mobilgeräten */
+    }
 }
