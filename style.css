@@ -23,6 +23,14 @@ body {
 h1 {
     font-size: 2.5em;
     color: #fff;
+    margin: 0; /* Verhindert zusätzlichen Abstand */
+}
+
+/* Responsive Schriftgröße */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em; /* Kleinere Schriftgröße für mobile Geräte */
+    }
 }
 
 .countdown {
@@ -45,45 +53,9 @@ h1 {
     background-color: #333;
     color: #fff;
 }
-body {
-    font-family: Arial, sans-serif;
-    color: #fcfcfc;
-    text-align: center;
-    padding: 50px;
-}
-
-.container {
-    max-width: 600px;
-    margin: auto;
-}
-
-
-.question {
-    font-size: 1.5em;
-    margin: 20px 0;
-}
-
-.btn {
-    display: inline-block;
-    padding: 15px 25px;
-    font-size: 1.2em;
-    background-color: #fff;
-    color: #333;
-    text-decoration: none;
-    border: 2px solid #333;
-    transition: background-color 0.3s, color 0.3s;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #333;
-    color: #fff;
-}
 
 #invitation {
     display: none;
     margin-top: 20px;
     font-size: 1.3em;
 }
-
-
