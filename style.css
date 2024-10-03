@@ -58,7 +58,6 @@ h1 {
 .question {
     font-size: 1.5em;
     margin: 20px;
-
 }
 
 #invitation {
@@ -75,7 +74,5 @@ h1 {
     .container {
         padding: 20px; /* Weniger Padding auf kleinen Bildschirmen */
     }
-    .music-player iframe {
-        width: 100%; /* Vollbreite auf Mobilgeräten */
-    }
+    
 }
